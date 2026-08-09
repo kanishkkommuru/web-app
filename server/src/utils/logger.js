@@ -1,5 +1,4 @@
 const winston = require('winston');
-const path = require('path');
 
 /**
  * Production-grade logger using Winston
@@ -42,26 +41,10 @@ const format = winston.format.combine(
       )
 );
 
+// Console-only transport — safe for serverless (Vercel has a read-only filesystem)
 const transports = [
   new winston.transports.Console(),
 ];
-
-// File transports only in production
-if (process.env.NODE_ENV === 'production') {
-  transports.push(
-    new winston.transports.File({
-      filename: path.join('logs', 'error.log'),
-      level: 'error',
-      maxsize: 5242880, // 5MB
-      maxFiles: 5,
-    }),
-    new winston.transports.File({
-      filename: path.join('logs', 'combined.log'),
-      maxsize: 5242880,
-      maxFiles: 5,
-    })
-  );
-}
 
 const logger = winston.createLogger({
   level: level(),

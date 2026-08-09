@@ -6,7 +6,12 @@ const logger = require('../utils/logger');
  * Implements retry logic with exponential backoff
  */
 const connectDB = async () => {
-  const MAX_RETRIES = 5;
+  // Reuse existing connection (important for serverless warm starts)
+  if (mongoose.connection.readyState === 1) {
+    return mongoose.connection;
+  }
+
+  const MAX_RETRIES = 3;
   let retries = 0;
 
   while (retries < MAX_RETRIES) {
@@ -18,27 +23,18 @@ const connectDB = async () => {
       });
 
       logger.info(`MongoDB Connected: ${conn.connection.host}`);
-      
-      mongoose.connection.on('error', (err) => {
-        logger.error('MongoDB connection error:', err);
-      });
-
-      mongoose.connection.on('disconnected', () => {
-        logger.warn('MongoDB disconnected. Attempting reconnection...');
-      });
-
       return conn;
     } catch (error) {
       retries += 1;
       logger.error(`MongoDB connection attempt ${retries} failed: ${error.message}`);
-      
+
       if (retries === MAX_RETRIES) {
-        logger.error('Max retries reached. Exiting...');
-        process.exit(1);
+        // Throw instead of process.exit() — safe for serverless
+        throw new Error(`MongoDB connection failed after ${MAX_RETRIES} attempts: ${error.message}`);
       }
 
       // Exponential backoff
-      const delay = Math.min(1000 * Math.pow(2, retries), 30000);
+      const delay = Math.min(1000 * Math.pow(2, retries), 10000);
       await new Promise((resolve) => setTimeout(resolve, delay));
     }
   }
