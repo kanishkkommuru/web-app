@@ -15,10 +15,18 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Routes
+const authRoutes = require('./routes/authRoutes');
+const taskRoutes = require('./routes/taskRoutes');
+
 // Basic health-check route
 app.get('/', (req, res) => {
   res.status(200).json({ message: 'Task Manager API is running' });
 });
+
+// API Routes
+app.use('/api/auth', authRoutes);
+app.use('/api/tasks', taskRoutes);
 
 // Connect to MongoDB (non-blocking at module load — safe for serverless)
 if (process.env.MONGODB_URI) {
