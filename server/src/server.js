@@ -15,33 +15,25 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Basic route
+// Basic health-check route
 app.get('/', (req, res) => {
   res.status(200).json({ message: 'Task Manager API is running' });
 });
 
-// Port configuration
-const PORT = process.env.PORT || 5000;
+// Connect to MongoDB (non-blocking at module load — safe for serverless)
+if (process.env.MONGODB_URI) {
+  connectDB().catch((err) => logger.error('MongoDB connection error:', err));
+} else {
+  logger.warn('MONGODB_URI is not defined. Running without database connection.');
+}
 
-// Start server
-const startServer = async () => {
-  try {
-    // Only connect to DB if URI is provided, to avoid crash on initial deploy without env vars
-    if (process.env.MONGODB_URI) {
-      await connectDB();
-    } else {
-      logger.warn('MONGODB_URI is not defined. Running without database connection.');
-    }
-    
-    app.listen(PORT, () => {
-      logger.info(`Server running on port ${PORT}`);
-    });
-  } catch (error) {
-    logger.error('Failed to start server:', error);
-    process.exit(1);
-  }
-};
+// For local development, start an HTTP server
+if (process.env.NODE_ENV !== 'production') {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    logger.info(`Server running locally on port ${PORT}`);
+  });
+}
 
-startServer();
-
+// Export the app for Vercel serverless runtime
 module.exports = app;
