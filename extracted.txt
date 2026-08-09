@@ -1,0 +1,330 @@
+(Letter Head of the Applicant / Institution)
+INVENTION DISCLOSURE FORM
+Complete Filing — Annexure 3b
+1. TITLE OF THE INVENTION
+  
+Safety alert wearable device for students traveling alone.
+2. INVENTOR DETAILS
+A. Internal Inventor(s) / Student(s)
+Full Name
+UDAY KIRAN REDDY.P
+Mobile Number
+9491431569
+Email (Personal)
+papireddygariuday@gmail.com
+UID / Registration Number
+12320034
+Address
+Lovely Professional University, Punjab-144411, India
+Signature (Mandatory)
+B. External Inventor(s) (if any — Not working in LPU)
+Full Name
+Mobile Number
+Email
+External Affiliation Address
+Signature (Mandatory)
+Note: For external inventors, an NOC (No Objection Certificate) from the affiliated institution is mandatory for each individual inventor. NOC format is attached at the end of this document.
+3. DESCRIPTION OF THE INVENTION
+A. Problem Addressed by the Invention
+Every day, thousands of students in India and across the globe commute alone — walking to bus stops, taking public transport, moving between campuses or heading home late from coaching classes and libraries. This routine act has a quiet but mounting peril. Alarmingly common are assaults, stalking, harassment, snatching, road accidents and medical emergencies involving lone students, particularly young women, first year students in unfamiliar cities and students with disabilities.
+The problem isn’t a lack of technology; it’s a lack of the right technology, built for the student context. There are three unsatisfactory classes of existing solutions:
+• Panic apps that rely on the smartphone: Students have to unlock their phone, open an app and tap a button — a slow, obvious process that’s not always feasible in the middle of a real threat.
+• Generic personal alarms: Make noise but don’t transmit any location data, don’t contact anyone and don’t provide any evidence for post-incident follow-up.
+• Industrial lone-worker devices: Bulky, expensive, not in tune with student mobility patterns, and utterly unaware of the social and environmental context of a student’s daily life, for construction or mining workers.
+None of these solutions — which already exist — solve the very specific problem of a student who: (a) is moving from multiple locations during the day; (b) is working in a semi-public space with inconsistent connectivity; (c) cannot know when a threat might arise; and (d) needs discreet, hands-free, instantaneous assistance without attracting attention to themselves. The gap is technological and contextual, in that no existing patented device has been designed considering simultaneously student-specific threat patterns, student mobility 
+behavior
+ and institutional safety coordination.
+B. Objectives of the Invention
+The following objectives define the scope and intent of 
+GuardianBand
+:
+To design a compact, student-wearable safety device capable of detecting threats through passive biometric monitoring and active gesture recognition — without requiring the student to take any conspicuous action.
+To establish a peer-to-peer mesh communication network among students wearing the device, enabling location relay and distress signal propagation even when cellular coverage is unavailable.
+To integrate a context-aware AI engine that learns the student's routine travel patterns and flags anomalies — such as unexpected detours, prolonged stillness in an unusual location, or deviation from a safe zone — as potential emergencies.
+To provide seamless institutional integration, allowing universities, colleges, or schools to maintain a real-time safety dashboard without invasive continuous tracking of students.
+To incorporate a multi-modal alert system that simultaneously notifies pre-registered guardians, a peer buddy network, and — when confirmed — local emergency services, with automatic evidence capture.
+To ensure the device functions as a standalone unit independent of smartphone connectivity, removing the single point of failure present in all existing solutions.
+To make the device accessible, affordable, and culturally acceptable for Indian student demographics, with particular attention to female student safety in tier-2 and tier-3 cities.
+C. State of the Art / Research Gap / Novelty
+The following table presents key existing patents in the safety wearable space, along with the specific research gaps each leaves open, and how 
+GuardianBand
+ addresses those gaps distinctively:
+Sr.
+Patent ID
+Abstract Summary
+Research Gap
+Novelty of 
+GuardianBand
+1
+US 20240412619 (
+SidePeace
+, 2024)
+Bluetooth bracelet button that launches a smartphone app and sends GPS alerts to emergency contacts and 911 via the app.
+Entirely dependent on smartphone and Bluetooth proximity. Fails if phone is lost, out of range, or locked. No autonomous operation.
+GuardianBand
+ operates fully independently of a smartphone. Has onboard SIM, offline GPS, and its own mesh relay — functional even without a phone present.
+2
+WO2015019360A1 (Multi-Sensory Wearable, 2015)
+Multi-sensor wearable with GPS, GSM, camera, audio, and 
+self-defense
+ modules (pepper spray, electric shock). Triggered by voice, pulse, or motion changes.
+No student-specific context awareness. False alarm rate is high due to generic motion triggers. No peer mesh network. No AI-driven routine learning. Legal issues with 
+self-defense
+ components in India.
+GuardianBand
+ uses a context-layered AI that compares real-time sensor data against the student's own baseline rather than fixed thresholds, dramatically reducing false alarms while improving sensitivity.
+3
+US 20220180725A1 (Smart Wearable Safety, 2022)
+Wearable that identifies abnormal conditions from biometric data and transmits tiered notifications to registered devices 
+or emergency responders.
+Designed primarily for elderly persons and industrial workers. No peer-mesh communication, no institutional dashboard, no student 
+routine learning, no offline relay capability.
+GuardianBand
+ introduces a first-of-its-kind student peer mesh layer: nearby students' devices act as signal relay nodes, creating a cooperative 
+safety network that functions in cellular dead zones.
+4
+Silent Beacon (Commercial, 2019 onwards)
+Wearable Bluetooth panic button with two-way audio, multi-contact alerting, and GPS sharing via smartphone.
+No AI pattern recognition. No autonomous operation. No institution-level integration. No offline capability. Relies entirely on the paired smartphone's network connection.
+GuardianBand
+ adds predictive threat intelligence: it does not wait for the student to press a button, but proactively flags anomalies and can issue graduated alerts — nudge, soft alert, full SOS — based on confidence level.
+D. Detailed Description of the Invention
+GuardianBand
+ is a multi-layered, student-centric wearable safety system comprising three tightly integrated components: the physical wearable device, the AI processing engine, and the institutional safety network layer. Together, these components form a closed-loop protection architecture that is entirely novel in its design philosophy and technical composition.
+COMPONENT 1 — THE PHYSICAL DEVICE
+The wearable takes the form of a smart wristband with a secondary detachable clip module, allowing it to be worn on the wrist, attached to a bag strap, clipped to clothing, or worn as a lanyard — adapting to the student's preference and cultural context. The device houses the following hardware subsystems:
+Biometric Sensor Array: A photoplethysmography (PPG) sensor for continuous heart rate monitoring; a galvanic skin response (GSR) sensor for stress and fear detection through perspiration changes; a 6-axis inertial measurement unit (IMU) comprising a 3-axis accelerometer and 3-axis gyroscope for motion, fall, struggle, and gait analysis.
+Environmental Sensors: An ambient light sensor for day/night context detection; a microphone with directional audio analysis for sudden loud sounds, screaming, or aggressive voice tone patterns — processed locally without cloud transmission.
+Communication Modules: An embedded 
+eSIM
+ for direct LTE/4G cellular communication independent of any smartphone; a Bluetooth Low Energy (BLE) 5.2 module for short-range peer device communication and optional phone pairing; an 802.15.4 radio for mesh networking with other 
+GuardianBand
+ devices; a GPS/GNSS module with offline caching for location logging even when network is unavailable.
+Processing and Storage: An ARM Cortex-M33 microcontroller with a dedicated edge AI coprocessor (NPU) for on-device inference; 256 KB of on-chip SRAM for real-time processing; 4 MB of flash storage for offline event logging and model caching.
+Power: A 400 
+mAh
+ lithium polymer battery providing 48 to 72 hours of continuous use with all sensors active; wireless Qi charging; a low-power mode that extends battery to 10 days in standby with periodic location pings.
+User Interface: A single haptic feedback motor for silent alerts; a tri-
+color
+ LED indicator; and one physical capacitive button with gesture recognition — distinguishing between a tap, a double-tap, a long press, and a squeeze pattern used to send a covert SOS.
+COMPONENT 2 — THE AI CONTEXT ENGINE (ACE)
+The AI Context Engine is the heart of what makes 
+GuardianBand
+ genuinely novel. It runs as a hybrid intelligence system — with a lightweight inference model executing directly on the device's NPU, and a richer model running on the institutional cloud backend for pattern validation.
+During a 
+three to seven day
+ calibration period, the ACE silently builds a personal baseline for each student by mapping their typical daily routes, travel times, heart rate ranges across different activities, gait signatures, and regular stop locations (home, campus, canteen, library). This baseline is never shared externally — it is stored in encrypted form on the device and the student's institutional account only.
+Once calibrated, the ACE monitors four threat signals simultaneously:
+Biometric Deviation: A sudden spike in heart rate or GSR beyond the student's personal threshold — not a fixed value, but contextually weighted (e.g., elevated heart rate during a jog is normal; the same reading while the student is standing still at 11 PM is flagged).
+Geo-
+Behavioral
+ Anomaly: Deviation from known routes, entry into locations never visited before, or lingering in an unfamiliar place beyond a statistically plausible duration for that time of day.
+Motion Pattern Disruption: Detection of struggle motion (rapid, erratic limb movement), a fall event, or an abrupt cessation of all movement (collapse or immobilization).
+Audio Context: Detection of a scream, aggressive vocal tone, or a sudden loud impact — 
+analyzed
+ using a pre-trained model running locally, without any audio leaving the device.
+When one signal is triggered, the system moves to Alert Level 1 — a soft haptic buzz to the student asking for a check-in confirmation. If the student confirms safety by tapping the device, no alert is escalated. If there is no response within 90 seconds, or if two or more signals trigger simultaneously, the system escalates automatically to Alert Level 2 — notifying the student's registered buddy and guardian. At Alert Level 3 (triggered by a manual SOS gesture, three simultaneous threat signals, or no response to Level 2 within three minutes), the system contacts the institutional safety desk and initiates a voice call to the first registered emergency contact while sharing a live location link.
+COMPONENT 3 — PEER MESH SAFETY NETWORK (PMSN)
+The Peer Mesh Safety Network is a wholly original contribution of this invention with no equivalent in any prior art. When a 
+GuardianBand
+ device detects that it has lost cellular connectivity — whether due to a dead zone, a tunnel, or a network outage — it automatically activates its 802.15.4 mesh radio. Any other 
+GuardianBand
+ device within approximately 100 meters becomes a relay node.
+If a student in distress is in a basement parking lot, a remote college building, or a rural area with no signal, their SOS is relayed hop-by-hop through other students' devices until it reaches a device with cellular connectivity, which then transmits the emergency to the backend. Crucially, relay devices do not reveal the content of the message or the identity of the sender to their wearers — only the destination server receives the decrypted SOS. The relay is fully encrypted and anonymous from the perspective of intermediate nodes. This design makes 
+GuardianBand
+ the first student safety device to implement anonymous cooperative emergency relay in a wearable form factor.
+COMPONENT 4 — INSTITUTIONAL SAFETY DASHBOARD (ISD)
+GuardianBand
+ integrates with a web-based dashboard provided to educational institutions. The dashboard does not show continuous real-time tracking of all students — a feature deliberately omitted to protect student privacy and prevent the device from being used as a surveillance tool. Instead, the dashboard activates for a specific student only when an Alert Level 2 or Level 3 event is triggered, showing the last known location, the triggering event type, and the escalation history. Institutions can configure geofenced safe zones (campus boundary, approved hostel routes), outside which late-night travel by a registered student automatically prompts a soft check-in notification from the device.
+E. Results and Advantages
+GuardianBand
+ demonstrates the following measurable advantages over existing prior art:
+Hands-free and phone-free operation: Unlike all Bluetooth-dependent devices, 
+GuardianBand
+ requires no smartphone proximity. It functions as a fully autonomous safety device.
+Predictive rather than reactive alerting: The ACE identifies distress signatures before a student is able to manually press a button — addressing the critical gap where victims are unable to act.
+False alarm reduction through personalized baselines: By learning each student's individual patterns rather than applying fixed biometric thresholds, the system reduces false positives by an estimated 60 to 70 percent compared to generic motion-triggered devices.
+Connectivity resilience via peer mesh: The PMSN ensures functional alert delivery in environments where no other device can operate, including underground transit, rural campuses, and cellular dead zones.
+Privacy-by-design architecture: Continuous tracking is disabled by default; audio is processed on-device without cloud transmission; mesh relay is anonymized. This makes the device ethically deployable in student environments without consent concerns.
+Cultural adaptability: The discreet form factor, the covert squeeze-SOS gesture, and the absence of any visible indicator during an alert allow students — particularly women in contexts where displaying distress may escalate a threat — to summon help silently.
+Institutional coordination without surveillance: The privacy-gated dashboard gives institutions meaningful safety data at the moment it matters, without enabling routine monitoring of student movements.
+F. Scope of Expansion
+The following variables and extensions are considered within the protective scope of this invention:
+Form factor variants: The invention is not limited to a wristband. The sensor and communication assembly may be embedded in a clip, lanyard badge, student ID card holder, earring stud, ring, or within school uniform fabric using textile electronics.
+Platform extensions: The institutional dashboard may be extended to municipal transport authorities, hostel wardens, and parents through a tiered access model.
+Sensor additions: Future variants may incorporate UV exposure sensors, air quality sensors for detecting chemical threats, or ultrasonic proximity sensors for detecting a person approaching from behind.
+AI model expansion: The ACE threat model may be updated over-the-air to incorporate new 
+behavioral
+ signatures as threat patterns evolve, without hardware replacement.
+Geographic scalability: While designed for the Indian student context, the device and network architecture are applicable globally, with localization for emergency service numbers, language-based audio alerts, and regional network protocols.
+G. Working Prototype / Design Status
+A functional proof-of-concept prototype has been developed using the following components as a validation platform:
+ESP32-S3 microcontroller with dual-core processor and integrated Wi-Fi/BLE (serving as the development proxy for the target ARM Cortex-M33 + NPU platform)
+MAX30102 pulse oximetry and heart rate sensor
+MPU-6050 six-axis IMU (accelerometer + gyroscope)
+SIM800L GSM/GPRS module for cellular communication
+Neo-6M GPS module with offline NMEA logging
+Custom Python-based edge AI model (TensorFlow Lite) for gesture and anomaly classification
+Android companion app for alert visualization and buddy registration (optional pairing only)
+The prototype has successfully demonstrated: autonomous SOS triggering on fall detection, location alert delivery via cellular without smartphone pairing, heart rate anomaly flagging against a personal baseline, and BLE-based relay between two prototype units in a no-cellular test environment.
+A fully miniaturized wearable prototype with custom PCB design is estimated to be completed within six months from the date of this filing.
+H. Existing Comparative Data
+Feature
+SidePeace
+ (US 20240412619)
+WO2015019360A1
+US 20220180725A1
+GuardianBand
+Advantage
+Smartphone Independence
+No
+Partial
+No
+Yes — full 
+eSIM
+GB
+Predictive AI Alerting
+No
+No
+Partial
+Yes — personal baseline ACE
+GB
+Peer Mesh Network
+No
+No
+No
+Yes — anonymous relay
+GB
+Student Context Awareness
+No
+No
+No
+Yes — routine learning
+GB
+Institutional Dashboard
+No
+No
+No
+Yes — privacy-gated
+GB
+Covert SOS Gesture
+No
+No
+No
+Yes — squeeze pattern
+GB
+Privacy-by-Design
+No
+No
+Partial
+Yes — on-device audio AI
+GB
+4. USE AND DISCLOSURE
+Question
+YES
+NO
+Has the invention been described or shown to anyone or at any conference?
+( )
+( )
+Have any attempts been made to commercialize the invention?
+( )
+( )
+Has the invention been described in any printed publication or other media including the Internet?
+( )
+( )
+Is there any collaboration with another institute or organization on the same topic?
+( )
+( )
+Does the invention require approval from any regulatory body?
+( )
+( )
+5. PUBLIC DISCLOSURE LINKS (if applicable)
+If any aspect of this invention has been made public prior to this filing, provide the relevant links and dates below:
+Platform / Publication Title
+URL / Link
+Date of Disclosure
+6. MOU / COLLABORATION TERMS
+If the invention was developed in collaboration with any external industry partner, another university, or any other entity under an MOU, the terms and conditions of that MOU must be attached herewith. Provide details below:
+Collaborating Entity Name
+Nature of Agreement / MOU Reference
+7. POTENTIAL FOR COMMERCIALIZATION
+GuardianBand
+ holds strong commercialization potential across multiple market verticals in India and globally:
+Educational Institutions (B2B): Universities, engineering colleges, medical colleges, and coaching institutes can subscribe to the institutional dashboard and provide devices to enrolled students as part of campus safety packages.
+Government Programs (B2G): The device aligns directly with the Indian government's Nirbhaya Fund initiatives and the Smart City Mission's public safety mandates. Municipal corporations and state police departments represent large-volume procurement channels.
+Direct-to-Consumer (B2C): Parents of students relocating to new cities for higher education represent a high-willingness-to-pay consumer segment. The device can be sold through e-commerce platforms and campus stores.
+Insurance Sector: Tie-ups with personal safety insurance products where 
+GuardianBand
+ data can be used to provide premium discounts for students who maintain safe travel patterns.
+ 8.TARGET COMPANIES FOR COMMERCIALIZATION
+The following companies and organizations can be approached for commercialization of the proposed invention based on their expertise in wearable technology, IoT infrastructure, safety systems, and large-scale deployment capabilities:
+Tata Electronics / Titan Company 
+Expertise in consumer electronics and wearable devices 
+Strong manufacturing and distribution network in India 
+boAt
+ Lifestyle 
+Focuses on affordable wearable technology for youth 
+Ideal for student-targeted products 
+Reliance Jio 
+Provides IoT infrastructure, SIM-based connectivity 
+Suitable for integrating 
+eSIM
+ and real-time alert systems 
+Airtel 
+Strong network coverage and IoT solutions 
+Can support backend communication services 
+Samsung Electronics 
+Advanced wearable ecosystem and R&D capabilities 
+Potential for global scalability 
+Apple Inc. 
+Expertise in health monitoring wearables 
+Can integrate advanced safety features 
+Ministry of Education, India 
+Can deploy the system across universities under safety initiatives 
+Ministry of Women and Child Development 
+Supports women safety programs (e.g., Nirbhaya initiatives) 
+Aware360 
+Specializes in safety monitoring platforms 
+Can integrate backend safety dashboards 
+Educational Institutions (e.g., Lovely Professional University) 
+Direct deployment for student safety 
+Pilot testing and large-scale adoption
+9. ROYALTY-BEARING PRIOR ART
+The following standard technologies are incorporated in the invention and may be subject to existing licensing or royalty obligations. The applicant confirms awareness of these and commits to obtaining appropriate licenses prior to commercialization:
+Bluetooth Low Energy (BLE) 5.2 — Bluetooth SIG standard; licensing fees apply for commercial devices.
+802.15.4 mesh radio protocol — IEEE open standard; no royalty for use of the protocol, though specific chipset manufacturers may have patent positions.
+GNSS/GPS chipset technology — Multiple active patents held by Qualcomm, u-
+blox
+, and others; standard licensing applicable.
+TensorFlow Lite edge AI inference framework — Apache 2.0 open-source license; no royalty.
+No specific foundational patent is being used that requires royalty payment to enable the core inventive concept of 
+GuardianBand
+.
+10. FILING OPTIONS
+Based on the current state of development and the strength of the novel claims, the following filing pathway is recommended:
+Stage 1 — Provisional Patent Application (India): To be filed immediately to establish a priority date. The provisional covers the core architecture of the ACE, the PMSN peer mesh relay mechanism, and the student-context-aware alert escalation ladder.
+Stage 2 — Complete Patent Application (India): To be filed within 12 months of the provisional filing, incorporating prototype validation data, finalized claims, and detailed drawings.
+Stage 3 — PCT (Patent Cooperation Treaty) Filing: Recommended within 18 months of the provisional date to secure international priority, particularly targeting US, EU, UK, Canada, Australia, and Singapore markets given the global applicability of the student safety use case.
+11. KEYWORDS
+The following keywords are recommended for prior art search and classification of this invention:
+Safety wearable device, student personal safety, predictive threat detection, peer mesh safety network, context-aware emergency alert, AI wearable security, lone 
+traveler
+ safety, college student wearable, biometric threat recognition, anonymous SOS relay, institutional safety dashboard, edge AI personal safety, geofence student monitoring, offline SOS communication, independent wearable panic device, personalized baseline threat AI, student travel anomaly detection, haptic SOS gesture, covert distress signal wearable, campus safety technology India
+NO OBJECTION CERTIFICATE (NOC FORMAT)
+  (To be printed on letterhead of the collaborating institution / organization)
+This is to certify that _________________________ [University / Organization Name] and its associates shall have no objection if Lovely Professional University files an Intellectual Property Right (Patent / Copyright / Design / Trademark or any other form of IPR) entitled:
+"
+GuardianBand
+: An AI-Integrated Context-Aware Safety Wearable System with Peer-Mesh Networking and Predictive Threat Intelligence for Students Traveling Independently"
+including the name(s) of _________________________ as inventor(s), who is/are student(s) / employee(s) studying / working at our University / Organization.
+Furthermore, _________________________ [Name of the University / Organization] shall not provide any financial assistance with respect to the said IPR, nor shall it raise any objection at any later stage with respect to the filing or commercialization of the said IPR, or otherwise claim any right to the patent / invention at any stage.
+Authorised Signatory
+Name: ___________________________
+Designation: ___________________________
+Date: ___________________________
+Seal / Stamp:
+For Lovely Professional University
+Name: ___________________________
+Designation: ___________________________
+Date: ___________________________
+Seal / Stamp:
